@@ -1,6 +1,11 @@
-<h2>Categoris</h2>
+<h2>Categories</h2>
 <ul class="categories">
-  <li>
-    <span class="badge">{{ category.id }}</span> {{ category.name }}
+  <li *ngFor="let category of categories; let i = index">
+    Catergory: {{ category.id }} {{ category.name }}
+    <ul class="styles">
+      <li *ngFor="let item of category.subcategory">
+        {{ item.id }} {{ item.name }}
+      </li>
+    </ul>
   </li>
 </ul>

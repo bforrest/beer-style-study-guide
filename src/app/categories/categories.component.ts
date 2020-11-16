@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/models/category';
 import { CategoriesService } from '../categories.service';
-import {Category} from '../category';
+
 
 @Component({
   selector: 'app-cotegories',
@@ -9,8 +10,8 @@ import {Category} from '../category';
 })
 export class CategoriesComponent implements OnInit {
 
-  selectedCategory: Category;
-  categories: Category[];
+  //selectedCategory: Category;
+  categories: Category[] = [];
 
 
   getCategories(): void{
@@ -21,9 +22,9 @@ export class CategoriesComponent implements OnInit {
     this.getCategories();
   }
 
-  onSelect(category: Category): void{
-    this.selectedCategory = category;
-  }
+  // onSelect(category: Category): void{
+  //   //this.selectedCategory = category;
+  // }
   constructor(private categoriesService: CategoriesService) { }
 
 }
